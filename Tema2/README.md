@@ -53,3 +53,24 @@ sau variabila
 	* pentru fiecare argumetn dintr-ul termen Prolog apeleaza maxar
 	* returneaza maximul dintre rezultatele optiune
 	* se opreste pana in index 0
+
+### maxsubterm
+
+Termenul cel mai mare in ordinea standard a termenilor prolog din argumentele
+unui termen........
+
+* maxsubterm
+	* formeaza lista termeniilor dintr-un termen folosind operatorul **=..**
+	* sorteaza lista respectiva si selecteaza primul element
+	* in cerinta se specifa mazimul in raport cu ordinea **@=<**, am folosit ordinea
+**@>=**(opusul) pentru a avea maximul la inceputul listei
+* parcurgeArgSub
+	* pentru fiecare argument, apeleaza maxsubterm
+	* foloseste quicksort pentru a pastra mereu cel mai mare termen gasit 
+* cuvantul cheie este **quicksort**
+
+Se poate ca implementarea cu quicksort sa nu fie bune, intrucat la exercitiul 4
+cere o ordinare a termenilor dupa ordinea **@=<**, care aici este facuta cu quicksort
+
+De asemenea, nu stiu cat de stabile sunt sortarile de la laborator pentru operatiile
+de ordine cu **@**.
