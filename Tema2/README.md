@@ -89,3 +89,47 @@ cere o ordinare a termenilor dupa ordinea **@=<**, care aici este facuta cu quic
 
 De asemenea, nu stiu cat de stabile sunt sortarile de la laborator pentru operatiile
 de ordine cu **@**.
+
+## Ex4
+
+### sortariListeNumere
+
+Doar apeleaza o sortare pe lista respectiva, folosind lex/2 ca operator pentru
+ordine
+
+### sirtListeTermeni
+
+Analog cu anteriorul predicat, dar foloseste lexterm/2 pentru ordine
+
+### ordoneazaArrSum
+
+Ordoneaza o lista de termeni prolog, duma suma aritatiilor acestora, date de 
+sumar/2
+
+* comparaArrSum - foloseste sumar/2 pentru a stabili daca 2 termeni se afla in
+ordinea buna
+	* este folosit pe post de operator de ordine in sortare
+
+### ordoneazaArrMaxime
+
+Ordoneaza o lista de termeni prolog dupa aritatea maxima a acestora sau a
+subtermenilor
+
+Este asemanator cu predicatul anterior, dar foloseste maxar pentru a stabili ordinea
+
+* comparaArrMaxime
+	* calculeaza aritatea maxima a termenilor si le compara
+
+### ordoneazaSubMax
+
+Ordoneaza o lista crescator dupa subtermenul maxim
+
+* foloseste comparaSubMax ca operator de ordine in sortare
+* comparaSubMax/2
+	* afla termenii maximi din 2 subtermeni primiti ca argumente si ii compara
+
+listaTermeni este un predicat in care am pus cateva liste de termeni pentru
+testarea predicatelor
+
+Predicatele nu au fost testate in totalitate, testele curente au asigurat o minima
+functionalitate
