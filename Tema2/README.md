@@ -14,11 +14,26 @@ Trebuie facut si Merge
 
 ## Ex2
 
-Listele au acceasi lungime?
+### lex
 
-Ce se intampla daca lungimile sunt dicerite?
+Pentru 2 liste de numere, verifica daca elementele din prima sunt mai mici decat
+elementele corespunzatoare din a doua lista.
 
-Vrem ca L < M?(pentru ordinea lexicografica)
+* pentru fiecare element din lista se verifica daca acesta este numar, si se
+compara cu elementul corespunzator din cealalta lista
+* daca a doua lista este mai lunga decat prima, se verifica daca are numai numere
+	* cu predicatul **verint/1**
+* daca prima lista este mai lunga decat a doua, atunci nu sunt in ordine lexicografica
+
+### lexterm
+
+Analog cu lex, doar ca aici listele contin termeni prolog
+
+Aici facem operatorii sa poata fi folositi si cu notatie infixata
+
+```
+:- op(500, xfx, [lex, lexterm]).
+```
 
 ## Ex3
 
