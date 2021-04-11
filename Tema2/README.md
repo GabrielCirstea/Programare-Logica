@@ -9,8 +9,7 @@ De facut sortari pe ordine arbitrara, ordinea se da ca parametru (ex; <, >, >=, 
 * insertion
 * bubble
 * quick
-
-Trebuie facut si Merge
+* merge sort
 
 ## Ex2
 

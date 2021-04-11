@@ -53,16 +53,17 @@ taie(P,[H|T],S,[H|D],Ord) :- taie(P,T,S,D,Ord).
 
 % Sortarea prin interclasare binara:
 
-mergesort([],[]).
-mergesort([X],[X]).
-mergesort([H,K|T],ListaSortata) :- taiejum([H,K|T],Stg,Dr), mergesort(Stg,S), mergesort(Dr,D),
-		                     merge(S,D,ListaSortata).
+mergesort([],[],_).
+mergesort([X],[X],_).
+mergesort([H,K|T],ListaSortata, Ord) :- taiejum([H,K|T],Stg,Dr), mergesort(Stg,S, Ord),
+							mergesort(Dr,D, Ord), merge(S,D,ListaSortata, Ord).
 
 taiejum([],[],[]).
 taiejum([X],[X],[]).
 taiejum([H,K|T],[H|S],[K|D]) :- taiejum(T,S,D).
 
-merge(L,[],L).
-merge([],[H|T],[H|T]).
-merge([H|T],[K|U],[H|L]) :- H=<K, merge(T,[K|U],L), !.
-merge([H|T],[K|U],[K|L]) :- merge([H|T],U,L), !.
+merge(L,[],L,_).
+merge([],[H|T],[H|T],_).
+merge([H|T],[K|U],[H|L], Ord) :- H==K, Termen=..[Ord,H,K], not(Termen), merge(T,U,L,Ord), !.
+merge([H|T],[K|U],[H|L], Ord) :- Termen=..[Ord,H,K], Termen, merge(T,[K|U],L,Ord), !.
+merge([H|T],[K|U],[K|L],Ord) :- merge([H|T],U,L,Ord), !.
