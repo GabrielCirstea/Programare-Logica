@@ -1,6 +1,8 @@
 % functor/3
 % arg/3
 
+% sumar(Termen, SumaAritati) - in suma aritati returneaza suma tuturor aritatiilor
+% termenilor din Termen + aritatea lui Termen
 sumar([], 0).
 sumar(Term, 0) :- functor(Term,_,0).
 % ia aritatea astiua, apoi parcurge argumentele si calculeaza-le aritatiile
@@ -11,6 +13,8 @@ parcurgeArgSum(_,0,0) :- !.
 parcurgeArgSum(Termen,N,Aritate) :- arg(N,Termen,Op), sumar(Op,Arr), P is N-1,
 								parcurgeArgSum(Termen,P,Arr2), Aritate is Arr+Arr2.
 
+% maxar(Termen, Max) - returneaza in Max, aritatea maxima dintre aritatea lui
+% Termen si aritatiile toturo termenilor acestuia
 maxar(Term, 0) :- functor(Term,_,0).
 maxar(Termen, AritateMaxima) :- functor(Termen,_,Arr), parcurgeArgMax(Termen,Arr,MaxAritate),
 				AritateMaxima is max(Arr, MaxAritate), !.
@@ -20,6 +24,8 @@ parcurgeArgMax(Termen,N,MaxAritate) :- arg(N,Termen,Arg),maxar(Arg,Arr),
 
 :- ['./ex1.pl'].
 
+% returneaza in SubtermenMaxim cel mai mare termen, in ordinea stabilita de
+% prolog
 maxsubterm(Termen,SubtermenMaxim) :- functor(Termen,_,Arr),Termen=..[_|List],
 						parcurgeArgSub(Termen,Arr,MaxSub),
 						quicksort([Termen,MaxSub|List],[SubtermenMaxim|_],@>=),!.

@@ -42,6 +42,9 @@ in mod repetat.
 
 ### sumar
 
+sumar(Termen, Suma) - Suma este suma aritatiilor lui Termen plus termenilor
+acestuia
+
 Face suma aritatiilor termeniilor, adica numarul de argumente din functie
 
 * sumar 
@@ -57,6 +60,9 @@ aritatea
 
 ### maxar
 
+maxar(Termen, Max) - Max este cea mai mare aritate dintre aritatea Termen-ului
+si aritatiiler celorlalti termeni ai sai
+
 Predicat care afla "argumetnul" cu cele mai multe argumente dintr-un termen Prolog
 
 * maxar
@@ -69,6 +75,9 @@ sau variabila
 	* se opreste pana in index 0
 
 ### maxsubterm
+
+maxsubterm(Termen, MaxTerm) - returneaza in MaxTerm, termenul maxim din ordinea
+prolog pe termeni
 
 Termenul cel mai mare in ordinea standard a termenilor prolog din argumentele
 unui termen........
