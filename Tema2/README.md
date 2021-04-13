@@ -141,3 +141,31 @@ testarea predicatelor
 
 Predicatele nu au fost testate in totalitate, testele curente au asigurat o minima
 functionalitate
+
+
+## Ex5
+
+### reodterm
+
+Ordoneaza termenii/argumentele unui termen
+
+Un argument f(T1,T2,T3...) devine f(U1,U2,U3,...)
+
+Unde U1, U2, U3, au fost sortati de asemenea
+
+* se foloseste operatorul
+```
+=..
+```
+pentru a se desface termenul intr-o lista in care sa avem argumentele acestuia
+
+* se ordoneaza lista
+* se aplica recursiv sortarea pe fiecare element din lista
+* se reasambleaza termenul
+```
+TermenNou=..[Operator|ListaSortata]
+```
+
+### parcurgeLista
+
+* parcurge lista de termeni si apeleaza reordterm pentru fiecare element
