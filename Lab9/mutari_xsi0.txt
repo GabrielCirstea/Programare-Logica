@@ -1,0 +1,14 @@
+pune(x,2,2).
+pune(x,1,2).
+pune(0,1,3).
+pune(x,3,4).
+pune(x,3,3).
+pune(0,2,2).
+pune(0,1,1).
+pune(x,1,2).
+pune(0,3,2).
+pune(x,2,1).
+pune(0,2,3).
+pune(x,3,1).
+
+
