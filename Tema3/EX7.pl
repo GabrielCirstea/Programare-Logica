@@ -9,9 +9,9 @@
 % p <-> q = (p->q) ^ (q->p) = ~((p->q)->~(q->p))
 
  conectprim(V,V) :- atom(V), !.
- conectprim(~X, ~Z):- conectprim(X,Z), !.
- conectprim(X v Y,~ Z -> W) :- write("sau "), conectprim(X,Z), conectprim(Y,W), !.
- conectprim(X^Y,~(Z -> (~W))) :- conectprim(X,Z), conectprim(Y,W), !.
- conectprim(X->Y,Z->T) :- conectprim(X,Z), conectprim(Y,T), !.
+ conectprim(~X, ~Z):- conectprim(X,Z).
+ conectprim(X v Y,~ Z -> W) :- conectprim(X,Z), conectprim(Y,W).
+ conectprim(X^Y,~(Z -> (~W))) :- conectprim(X,Z), conectprim(Y,W).
+ conectprim(X->Y,Z->T) :- conectprim(X,Z), conectprim(Y,T).
  conectprim(X<->Y,~((Z -> T) -> (~(T -> Z)))) :- conectprim(X,Z), 
- 												conectprim(Y,T), !.
+ 												conectprim(Y,T).
