@@ -23,4 +23,4 @@ in ordinea termenilor Prolog
 
 ### Tema 3
 
-Meritul este al Marei (o sa ii pun si numele de github cand o sa mi-l dea).
+Meritul este al Marei ([MaraHermeneanu](https://github.com/MaraHermeneanu)).
